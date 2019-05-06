@@ -1,0 +1,80 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="../static/css/main.css">
+{% endblock %}
+
+{% block title %}
+  {{ title }} - SRH Code
+{% endblock %}
+
+{% block navbar %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">SRH Code</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if title == 'Home' %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+        {% endif %}
+
+        {% if title == 'Experience' %}
+          <li class="nav-item active">
+        {% else %}
+          <li class="nav-item">
+        {% endif %}
+            <a class="nav-link" href="{{ url_for('experience') }}">Experience</a>
+          </li>
+
+        {% if title == 'Projects' %}
+          <li class="nav-item active">
+        {% else %}
+          <li class="nav-item">
+        {% endif %}
+            <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+          </li>
+
+        {% if title == 'Contact' %}
+          <li class="nav-item active">
+        {% else %}
+          <li class="nav-item">
+        {% endif %}
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+  <!-- show flash messages via an alert box -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for m in messages %}
+        <script type="text/javascript">
+          alert('{{ m }}')
+        </script>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- all template files will render within block app content -->
+  {% block app_content %}{% endblock %}
+
+  <footer>
+    <div class="row">
+      <div class="col-md-12">
+         <!-- TODO: add social media icons
+      </div> <!-- ends col 12 -->
+    </div> <!-- ends row -->
+  </footer>
+{% endblock %}
