@@ -4,7 +4,7 @@ from config import Config
 
 # setup app variables
 app = Flask(__name__)
-boostrap = Bootstrap(app)
+bootstrap = Bootstrap(app)
 app.config.from_object(Config)
 
 # go to routes
