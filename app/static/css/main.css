@@ -1,12 +1,16 @@
 .jumbotron {
-    background: url("https://www.rmi-inc.com/images/slider/slide3.jpg");
+    background-image: url("https://c.pxhere.com/photos/0b/6a/black_and_white_chair_computers_desks_indoors_job_man_office-1028132.jpg!d");
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.jumbotron>img {
-  margin-top: 100px;
-  background-color: #f8f9fa!important;
+.logo {
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+body {
+  background-color: #f8f9fa;
 }
 
 .lead {
@@ -19,7 +23,7 @@
 }
 
 .card-img-top {
-  padding: 10px;
+  padding: 15px;
 }
 
 .card-body>p {
